@@ -11,67 +11,72 @@
 # -----------------
 en: &DEFAULT_EN
   header:
-    title: Welcome to our Studio!
-    text: It's Nice To Meet You
-    button: Tell Me More
-    buttonlink: "#services"
+    title: The Right Service for You
+    text: GET MORE VALUE THAN PRICE
+    button: FREE QUOTE
+    buttonlink: "#contact"
 
   services:
     title: "Services"
-    text: "Lorem ipsum"
+    text: "BFL Group Pty Ltd"
     section: services
     list:
-      - title: "E-Commerce"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-        icon: fas fa-shopping-cart #find more at https://fontawesome.com/icons
-      - title: "Responsive Design"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-        icon: fas fa-laptop
-      - title: "[Markdown](https://en.wikipedia.org/wiki/Markdown)"
-        desc: "Your description here, full **Markdown** support"
-        icon: fab fa-markdown
+      - title: "Plastering Services"
+        desc: "We offer comprehensive plastering solutions for both <span style='color: #F57C00;font-weight: 900'>residential and commercial projects</span>. Whether it's Laser Batten and Plaster for homes, or Furring Channels, Suspended Ceilings, Ceiling Tiles, and Plaster for offices and retail spaces, our team ensures high-quality, durable, and visually appealing finishes tailored to your specific needs."
+        icon: fas fa-home #find more at https://fontawesome.com/icons
+      - title: "Bathroom Renovation"
+        desc: "Transform your home with our professional bathroom renovation services. <span style='color: #F57C00;font-weight: 900'>From initial demolition to creating a stunning, modern bathroom</span>, we handle every step of the process with precision and care. Whether it’s a complete makeover or a minor upgrade, we ensure your new bathroom is functional, stylish, and tailored to your vision."
+        icon: fas fa-bath
+      - title: "Aluminium Windows"
+        desc: "Sourcing directly from our factory, we have exceptional quality and competitive pricing in <span style='color: #F57C00;font-weight: 900'>Supply and Install aluminum windows and doors</span>, for both Residential and Commercial buildings."
+        icon: fas fa-door-open
 
   portfolio:
-    title: "Portfolio"
-    text: "Lorem ipsum dolor sit amet consectetur."
+    title: "Gallery of Our Work"
+#    text: "Lorem ipsum dolor sit amet consectetur."
     section: portfolio
     closebutton: "Close Project"
 
   timeline:
-    title: "Timeline"
-    text: "Lorem ipsum timeline"
+    title: "Customers' Feedback"
+    text: "BFL Group Pty Ltd timeline"
     section: timeline
     # left is the default
     #start_align: "left"
     events:
-      - title: "Our Humble Beginnings"
-        year: "2009-2011"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/timeline/1.jpg
+      - title: "Christopher(Box Hill South)"
+        year: "18 Apr 2024"
+        desc: "Very accommodating to deal with, efficient, punctual and reliable. Competitive price and excellent trades skills and work on a difficult and dirty ceiling replacement for our older style home. Strongly recommend."
+        image: assets/img/timeline/a.jpg
         alt:
-      - title: "An Agency is Born"
-        year: "March 2011"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-        image: assets/img/timeline/2.jpg
+      - title: "Linda L(Wantirna South)"
+        year: "1 May 2024"
+        desc: "Sam's team is very professional. They response promptly and always keep their words. They go extra miles to help,accommodate to my schedule. They delivered a good job. I strongly recommend them."
+        image: assets/img/timeline/b.jpg
         alt:
-      - title: "Jekyll Theme is created"
-        year: "2019"
-        desc: "Ravi Riley converted Agency, a Bootstrap-based theme, into a Jekyll theme. The Jekyll theme can be installed as a Ruby gem, or remotely. For more information, visit the documentation."
-        image: assets/img/timeline/3.jpg
-        alt: image alt text
-      - title: "Title"
-        year: "2009-2011"
-        desc: "Your description here, **Markdown** is fully supported."
-        image: assets/img/timeline/4.jpg
+      - title: "Te-Kan(Melbourne)"
+        year: "4 Jun 2024"
+        desc: "Quite detailed and conducted work for myproperty carefully, highly recommended."
+        image: assets/img/timeline/c.jpg
+        alt:
+      - title: "Sue T(Hughesdale)"
+        year: "11 Sep 2024"
+        desc: "Connected with BFL Group Pty Ltd and would recommend them."
+        image: assets/img/timeline/d.jpg
         alt:
         # you can enforce the alignment
         align: right
-    end: "Be Part <br> of Our <br> Story!"
+      - title: "Ngaire G(Reservoir)"
+        year: "18 Nov 2024"
+        desc: "Very fair quote, Feng's team is really easy to work with."
+        image: assets/img/timeline/e.jpg
+        alt:
+    end: "To Be<br>Continued"
 
   about:
     title: "About Us"
-    text: "our story"
-    body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported."
+#    text: "our story"
+    body: "At BFL, we believe in delivering <span style='color: #F57C00;font-weight: 900'>more value than the price</span>.<br>With over 7 years of industry experience, we pride ourselves on providing exceptional craftsmanship and outstanding customer service."
     section: about
 
   clients:
@@ -131,7 +136,7 @@ en: &DEFAULT_EN
 
   contact:
     title: "Contact Us"
-    text: "Lorem ipsum or call 123456789"
+    text: "<span style='font-size: 22px; color: #F57C00;font-weight: 900'>Send an email to info@bflgroup.com.au or call 0411828168</span>"
     section: contact
     name: "Name*"
     name-validation: "Please enter your name."
@@ -147,16 +152,10 @@ en: &DEFAULT_EN
   footer:
     legal: "Privacy Policy"
     social:
-      - url: https://twitter.com
-        icon: "fab fa-twitter"
-      - url: https://facebook.com
+      - url: https://www.facebook.com/share/1AzCHctzfE/?mibextid=wwXIfr
         icon: "fab fa-facebook-f"
-      - url: https://linkedin.com
-        icon: "fab fa-linkedin-in"
-      - url: https://github.com/raviriley/agency-jekyll-theme
-        icon: "fab fa-github"
-      - url: https://instagram.com
-        icon: "fab fa-instagram"
+      - url: https://www.tiktok.com/@bfl_plasteringwindows?_t=ZS-8sTUvsyC4jn&_r=1
+        icon: "fab fa-tiktok"
 en-US:
   <<: *DEFAULT_EN
 en-CA:
@@ -290,7 +289,7 @@ es: &DEFAULT_ES
 
   contact:
     title: "Contáctenos"
-    text: "Lorem ipsum or call 123456789"
+    text: "Lorem ipsum or call 0411828168"
     section: contacto
     name: "Nombre*"
     name-validation: "Por favor ingrese su nombre."

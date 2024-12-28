@@ -13,14 +13,14 @@ en: &DEFAULT_EN
   nav:
     - title: "Services"
       section: services
-    - title: "Portfolio"
+    - title: "Gallery of Our Work"
       section: portfolio
     - title: "About"
       section: about
-    - title: "Timeline"
+    - title: "Feedback"
       section: timeline
-    - title: "Team"
-      section: team
+#    - title: "Team"
+#      section: team
     - title: "Contact"
       section: contact
     - title: "Theme Source"
