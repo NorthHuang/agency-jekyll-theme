@@ -18,7 +18,7 @@ url    : "https://bflgroup.com.au" # the base hostname & protocol for your site,
 baseurl: "" # the subpath of your site, e.g. /blog
 
 title      : Build For Lifestyle
-email      : info@bflgroup.com.au #this is also the email contact forms will go to
+email      : hzl136133@gmail.com #this is also the email contact forms will go to
 description: "This is our company portal. Our company mainly deals with plastering services, bathroom renovation, aluminum alloy door and window installation, etc."
 author     : Zile Huang
 # logo:     #optional, defaults to site title
