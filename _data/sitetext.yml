@@ -136,7 +136,7 @@ en: &DEFAULT_EN
 
   contact:
     title: "Contact Us"
-    text: "<span style='font-size: 22px; color: #F57C00;font-weight: 900'>Send an email to hzl136133@gmail.com or call 0411828168</span>"
+    text: "<span style='font-size: 22px; color: #F57C00;font-weight: 900'>Send an email to info@bflgroup.com.au or call 0411828168</span>"
     section: contact
     name: "Name*"
     name-validation: "Please enter your name."
