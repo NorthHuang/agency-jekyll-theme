@@ -19,7 +19,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 
 title      : Build For Lifestyle
 email      : info@bflgroup.com.au #this is also the email contact forms will go to
-description: "Site description"
+description: "This is our company portal. Our company mainly deals with plastering services, bathroom renovation, aluminum alloy door and window installation, etc."
 author     : Zile Huang
 # logo:     #optional, defaults to site title
   # path: assets\img\clients\creative-market.jpg
