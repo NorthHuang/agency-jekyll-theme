@@ -53,7 +53,9 @@ jobs:
         run: ls -R _site
 
       - name: Debug Generated HTML
-        run: cat _site/index.html
+        run: |
+          cat _site/index.html
+          ls -R _site
 
       # Step 5: Upload build artifacts
       - name: Upload build artifacts
@@ -62,7 +64,7 @@ jobs:
           path: ./_site
 
       - name: Debug Uploaded Files
-        run: tar -tzf pages-artifact.tar.gz
+        run: ls -l pages-artifact.tar.gz || echo "Artifact not found"
 
       # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
