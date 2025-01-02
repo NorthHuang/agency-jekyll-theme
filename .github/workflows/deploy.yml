@@ -70,7 +70,3 @@ jobs:
           -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
           -d '{"purge_everything":true}' \
           --verbose
-
-      - name: Debug Config File
-        run: |
-          echo "Formspree: ${{ secrets.FORMSPREE_FORM_PATH }}"

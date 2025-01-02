@@ -44,6 +44,7 @@
                 <p class="help-block text-danger"></p>
               </div>
             </div>
+            <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
             <input type="hidden" name="_subject" id="email-subject"
               value="{{ site.data.sitetext[site.locale].contact.subject | default: "Contact Form Submission" }}">
             <div class="clearfix"></div>
@@ -52,7 +53,6 @@
               <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase"
                 type="submit">{{ site.data.sitetext[site.locale].contact.submit | default: "Send Message" }}</button>
             </div>
-            <div class="g-recaptcha" data-sitekey="{{ site.google_recaptcha_site_key }}"></div>
             <input type="text" name="_gotcha" style="display:none">
             <input type="hidden" name="_next" value="#" />
           </div>
@@ -106,6 +106,7 @@
                 <p class="help-block text-danger"></p>
               </div>
             </div>
+            <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
             <input type="hidden" name="_subject" id="email-subject"
               value="{{ site.data.sitetext.contact.subject | default: "Contact Form Submission" }}">
             <div class="clearfix"></div>
@@ -114,7 +115,6 @@
               <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase"
                 type="submit">{{ site.data.sitetext.contact.submit | default: "Send Message" }}</button>
             </div>
-            <div class="g-recaptcha" data-sitekey="{{ site.google_recaptcha_site_key }}"></div>
             <input type="text" name="_gotcha" style="display:none">
             <input type="hidden" name="_next" value="#" />
           </div>
