@@ -70,3 +70,12 @@ jobs:
           -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
           -d '{"purge_everything":true}' \
           --verbose
+
+      - name: Debug Config File
+        run: |
+          echo "Contents of _config.yml:"
+          cat _config.yml
+          echo "Contents of others:"
+          echo "$CLOUDFLARE_EMAIL"
+          echo "$CLOUDFLARE_API_KEY"
+          echo "$CLOUDFLARE_WEBHOOK_URL"
