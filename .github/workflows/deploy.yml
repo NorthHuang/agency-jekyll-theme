@@ -13,13 +13,15 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages  # 添加此部分
 
     steps:
-      # Step 1: check code
+      # Step 1: Checkout Code
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Step 2: set env variable and run ruby script to setup _config.yml
+      # Step 2: Set environment variables and run Ruby script
       - name: Generate _config.yml
         env:
           FORMSPREE_FORM_PATH: ${{ secrets.FORMSPREE_FORM_PATH }}
@@ -38,27 +40,24 @@ jobs:
           ruby-version: '3.0'
           bundler-cache: true
 
-      # Step 4: build
+      # Step 4: Build Jekyll Site
       - name: Build Jekyll Site
         run: |
-          gem install bundler
           bundle install
           bundle exec jekyll build
         continue-on-error: false
 
-      # Step 5: upload
+      # Step 5: Upload build artifacts
       - name: Upload build artifacts
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./_site
 
-      # Step 6: deploy
+      # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Step 7: call Cloudflare Webhook clear all cache
+      # Step 7: Clear Cloudflare Cache
       - name: Clear Cloudflare Cache
         env:
           CLOUDFLARE_WEBHOOK_URL: ${{ secrets.CLOUDFLARE_WEBHOOK_URL }}
@@ -69,5 +68,5 @@ jobs:
           -H "Content-Type: application/json" \
           -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
           -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
-          -d '{"purge_everything":true}'
+          -d '{"purge_everything":true}' \
           --verbose
