@@ -33,6 +33,7 @@ jobs:
             exit 1
           fi
           ruby generate_config.rb
+          cat _config.yml
 
       # Step 3: Install Ruby and Jekyll
       - name: Setup Ruby
@@ -48,11 +49,20 @@ jobs:
           bundle exec jekyll build --config _config.yml
         continue-on-error: false
 
+      - name: Verify Build Artifacts
+        run: ls -R _site
+
+      - name: Debug Generated HTML
+        run: cat _site/index.html
+
       # Step 5: Upload build artifacts
       - name: Upload build artifacts
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./_site
+
+      - name: Debug Uploaded Files
+        run: tar -tzf pages-artifact.tar.gz
 
       # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
@@ -71,9 +81,3 @@ jobs:
           -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
           -d '{"purge_everything":true}' \
           --verbose
-
-      - name: Verify Config File
-        run: cat _config.yml
-
-      - name: Debug Generated HTML
-        run: cat _site/index.html
