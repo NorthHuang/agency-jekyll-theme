@@ -26,6 +26,7 @@ jobs:
         env:
           FORMSPREE_FORM_PATH: ${{ secrets.FORMSPREE_FORM_PATH }}
           GOOGLE_RECAPTCHA_SITE_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SITE_KEY }}
+          DEBUG: '123'
         run: |
           if [ ! -f generate_config.rb ]; then
             echo "generate_config.rb not found!"

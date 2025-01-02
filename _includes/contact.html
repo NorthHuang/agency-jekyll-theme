@@ -11,6 +11,7 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
+        <div style="background: red; width: 100px; height: 100px">{{ site.debug }}</div>
         <form id="contactForm"
           action="https://formspree.io/{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}"
           novalidate="novalidate" method="POST">
@@ -73,6 +74,7 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
+        <div style="background: red; width: 100px; height: 100px">{{ site.debug }}</div>
         <form id="contactForm"
           action="https://formspree.io/{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}"
           novalidate="novalidate" method="POST">
