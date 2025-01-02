@@ -73,9 +73,4 @@ jobs:
 
       - name: Debug Config File
         run: |
-          echo "Contents of _config.yml:"
-          cat _config.yml
-          echo "Contents of others:"
-          echo "$CLOUDFLARE_EMAIL"
-          echo "$CLOUDFLARE_API_KEY"
-          echo "$CLOUDFLARE_WEBHOOK_URL"
+          echo "Formspree: ${{ secrets.FORMSPREE_FORM_PATH }}"
