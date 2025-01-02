@@ -14,7 +14,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment:
-      name: github-pages  # 添加此部分
+      name: github-pages
 
     steps:
       # Step 1: Checkout Code
@@ -44,7 +44,7 @@ jobs:
       - name: Build Jekyll Site
         run: |
           bundle install
-          bundle exec jekyll build
+          bundle exec jekyll build --config _config.yml
         continue-on-error: false
 
       # Step 5: Upload build artifacts
@@ -70,3 +70,6 @@ jobs:
           -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
           -d '{"purge_everything":true}' \
           --verbose
+
+      - name: Verify Config File
+        run: cat _config.yml
