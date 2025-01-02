@@ -74,3 +74,6 @@ jobs:
 
       - name: Verify Config File
         run: cat _config.yml
+
+      - name: Debug Generated HTML
+        run: cat _site/index.html
