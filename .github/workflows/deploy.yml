@@ -61,6 +61,19 @@ jobs:
       - name: Verify Artifact Before Upload
         run: tar -tvf pages-artifact.tar.gz
 
+      - name: Clear Cloudflare Cache
+        env:
+          CLOUDFLARE_WEBHOOK_URL: ${{ secrets.CLOUDFLARE_WEBHOOK_URL }}
+          CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
+          CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
+        run: |
+          curl -X POST "$CLOUDFLARE_WEBHOOK_URL" \
+          -H "Content-Type: application/json" \
+          -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
+          -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
+          -d '{"purge_everything":true}' \
+          --verbose
+
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
         with:
