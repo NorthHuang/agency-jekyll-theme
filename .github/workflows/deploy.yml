@@ -26,14 +26,17 @@ jobs:
           fi
           ruby generate_config.rb
 
-#      # Step 3: Install Ruby and Jekyll
-#      - name: Setup Ruby Environment
-#        run: |
-#          gem install bundler jekyll
+      # Step 3: Install Ruby and Jekyll
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 'latest'
+          bundler-cache: true
 
       # Step 4: build
       - name: Build Jekyll Site
         run: |
+          gem install bundler
           bundle install
           bundle exec jekyll build
         continue-on-error: false
