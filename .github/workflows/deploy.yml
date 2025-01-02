@@ -50,9 +50,8 @@ jobs:
 
       # Step 5: Upload build artifacts
       - name: Upload build artifacts
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: github-pages
           path: ./_site
 
       # Step 6: Deploy to GitHub Pages
