@@ -1,0 +1,65 @@
+name: Deploy and Clear Cache
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: check code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: set env variable and run ruby script to setup _config.yml
+      - name: Generate _config.yml
+        env:
+          FORMSPREE_FORM_PATH: ${{ secrets.FORMSPREE_FORM_PATH }}
+          GOOGLE_RECAPTCHA_SITE_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SITE_KEY }}
+        run: |
+          if [ ! -f generate_config.rb ]; then
+            echo "generate_config.rb not found!"
+            exit 1
+          fi
+          ruby generate_config.rb
+
+      # Step 3: Install Ruby and Jekyll
+      - name: Setup Ruby Environment
+        run: |
+          gem install bundler jekyll
+
+      # Step 4: build
+      - name: Build Jekyll Site
+        run: |
+          bundle install
+          bundle exec jekyll build
+        continue-on-error: false
+
+      # Step 5: upload
+      - name: Upload build artifacts
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./_site
+
+      # Step 6: deploy
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 7: call Cloudflare Webhook clear all cache
+      - name: Clear Cloudflare Cache
+        env:
+          CLOUDFLARE_WEBHOOK_URL: ${{ secrets.CLOUDFLARE_WEBHOOK_URL }}
+          CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
+          CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
+        run: |
+          curl -X POST "$CLOUDFLARE_WEBHOOK_URL" \
+          -H "Content-Type: application/json" \
+          -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
+          -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
+          -d '{"purge_everything":true}'
+          --verbose

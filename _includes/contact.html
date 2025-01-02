@@ -52,6 +52,7 @@
               <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase"
                 type="submit">{{ site.data.sitetext[site.locale].contact.submit | default: "Send Message" }}</button>
             </div>
+            <div class="g-recaptcha" data-sitekey="{{ site.google_recaptcha_site_key }}"></div>
             <input type="text" name="_gotcha" style="display:none">
             <input type="hidden" name="_next" value="#" />
           </div>
@@ -113,6 +114,7 @@
               <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase"
                 type="submit">{{ site.data.sitetext.contact.submit | default: "Send Message" }}</button>
             </div>
+            <div class="g-recaptcha" data-sitekey="{{ site.google_recaptcha_site_key }}"></div>
             <input type="text" name="_gotcha" style="display:none">
             <input type="hidden" name="_next" value="#" />
           </div>
