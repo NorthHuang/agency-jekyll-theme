@@ -51,7 +51,9 @@ jobs:
         run: sleep 2
 
       - name: Debug Build Output
-        run: ls -R _site
+        run: |
+          ls -R _site
+          cat _site/index.html
 
       - name: Create Artifact Package
         run: tar -czf pages-artifact.tar.gz -C ./_site .
