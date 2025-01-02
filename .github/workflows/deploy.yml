@@ -46,13 +46,24 @@ jobs:
         run: |
           bundle install
           bundle exec jekyll build --config _config.yml
-        continue-on-error: false
 
-      # Step 5: Upload build artifacts
-      - name: Upload build artifacts
-        uses: actions/upload-pages-artifact@v1
+      - name: Ensure Build is Complete
+        run: sleep 2
+
+      - name: Debug Build Output
+        run: ls -R _site
+
+      - name: Create Artifact Package
+        run: tar -czf pages-artifact.tar.gz -C ./_site .
+
+      - name: Verify Artifact Before Upload
+        run: tar -tvf pages-artifact.tar.gz
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v3
         with:
-          path: ./_site
+          name: github-pages
+          path: pages-artifact.tar.gz
 
       # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
